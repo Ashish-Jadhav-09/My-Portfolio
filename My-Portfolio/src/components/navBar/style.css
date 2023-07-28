@@ -1,0 +1,20 @@
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #eb523d;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.button:hover::after {
+  transform: scaleX(1);
+}

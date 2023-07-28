@@ -8,7 +8,7 @@ export const avtarDiv = {
 };
 
 export const avtar = {
-  margin: '6rem -14.5rem',
+  margin: '6rem -13.5rem',
   height: '62%',
   width: '30%',
   borderStyle: 'hidden',
@@ -18,7 +18,7 @@ export const linkedin = {
   height: '3rem',
   width: '3rem',
   margin: '0px 0px 0px 0px',
-  borderRadius: '1rem',
+  borderRadius: '3rem',
   borderStyle: 'hidden',
 };
 
