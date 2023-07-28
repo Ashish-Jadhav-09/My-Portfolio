@@ -1,7 +1,15 @@
 import { Avatar } from '@mui/material';
-import React, { useCallback } from 'react';
-import { useState, useRef, useEffect } from 'react';
-import { avtar, avtarDiv, contentDiv, github, homeDiv, instagram, linkedin } from './style';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
+import {
+  avtar,
+  avtarDiv,
+  contentDiv,
+  github,
+  homeDiv,
+  instagram,
+  linkedin,
+} from './style';
+import { Typewriter } from 'react-simple-typewriter';
 
 const img1 = require('../../assets/me.jpeg');
 const img2 = require('../../assets/photography.jpg');
@@ -32,19 +40,44 @@ const Home = () => {
   }, [images.length, currentSlide]);
 
   return (
-    <div
-      style={homeDiv}
-    >
-      <div
-        style={contentDiv}
-      >
-        <b style={{ fontSize: 40, fontFamily: 'initial' }}>
-          Hello, folks! I'm Ashish Jadhav
-        </b>
+    <div style={homeDiv}>
+      <div style={contentDiv}>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <b style={{ fontSize: 40, fontFamily: 'initial' }}>
+            Hello, folks! I'm
+          </b>
+          <b
+            style={{
+              fontSize: 40,
+              fontFamily: 'initial',
+              color: '#eb523d',
+              marginLeft: '10px',
+            }}
+          >
+            Ashish Jadhav
+          </b>
+        </div>
         <br />
-        <b style={{ fontSize: 20, fontFamily: 'initial' }}>
-          I'm a Full stack Developer.
-        </b>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <b style={{ fontSize: 20, fontFamily: 'initial' }}>I'm a</b>
+          <b
+            style={{
+              fontSize: 20,
+              fontFamily: 'initial',
+              color: '#eb523d',
+              marginLeft: '10px',
+            }}
+          >
+            <Typewriter
+              words={['Full Stack Developer']}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              loop={0}
+            />
+          </b>
+        </div>
         <br />
         <b style={{ fontSize: 17, fontFamily: 'monospace' }}>
           I always say empty glass Attitude.🤗📚 During the weekends
@@ -69,8 +102,8 @@ const Home = () => {
           <a href="https://www.instagram.com/the_mr.aj/">
             <img
               style={instagram}
-              alt={require('../../assets/instagram.png')}
-              src={require('../../assets/instagram.png')}
+              alt={require('../../assets/insta.png')}
+              src={require('../../assets/insta.png')}
             />
           </a>
           <a href="https://github.com/Ashish-Jadhav-09">
@@ -82,9 +115,7 @@ const Home = () => {
           </a>
         </div>
       </div>
-      <div
-        style={avtarDiv}
-      >
+      <div style={avtarDiv}>
         <Avatar
           style={avtar}
           key={images[currentSlide]}
