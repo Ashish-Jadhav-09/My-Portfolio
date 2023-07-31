@@ -1,0 +1,30 @@
+.homeDiv {
+  display: "flex";
+  flex-direction: "column";
+  flex-grow: 1;
+  /* position: "fixed"; */
+}
+
+.contentDiv {
+  margin: "10rem 10rem";
+  display: "flex";
+  flex-direction: "column";
+  flex-grow: 1;
+  color: "whitesmoke";
+}
+
+.avtarDiv {
+  margin: "4rem 70rem";
+  height: "100%";
+  width: "100%";
+  position: "fixed";
+  top: "0";
+  background-color: "white";
+}
+
+.avtar {
+  margin: "6rem -13.5rem";
+  height: "62%";
+  width: "30%";
+  border: "hidden";
+}

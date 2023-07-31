@@ -19,3 +19,7 @@ a {
 a::after {
   color: #0d0c0d;
 }
+
+.footerText {
+  cursor: pointer;
+}
