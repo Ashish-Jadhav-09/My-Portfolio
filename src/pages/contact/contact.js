@@ -8,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { github, instagram, linkedin } from "../home/style";
 import StarIcon from "@mui/icons-material/StarBorder";
 import "./style.css";
 
@@ -177,21 +176,39 @@ const Contact = ({ setValue }) => {
       <div style={{ marginLeft: "110px" }}>
         <a href="https://www.linkedin.com/in/ashish-jadhav-a3550419a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjYu7abEkQeW%2BCM5GVzvoBw%3D%3D">
           <img
-            style={linkedin}
+            style={{
+              height: "3rem",
+              width: "3rem",
+              margin: "0px 0px 0px 0px",
+              borderRadius: "3rem",
+              borderStyle: "hidden",
+            }}
             alt={require("../../assets/LinkedIn_icon_circle.png")}
             src={require("../../assets/LinkedIn_icon_circle.png")}
           />
         </a>
         <a href="https://www.instagram.com/the_mr.aj/">
           <img
-            style={instagram}
+            style={{
+              height: "3rem",
+              width: "3rem",
+              margin: "0px 0px 0px 10px",
+              borderRadius: "1rem",
+              borderStyle: "hidden",
+            }}
             alt={require("../../assets/insta.png")}
             src={require("../../assets/insta.png")}
           />
         </a>
         <a href="https://github.com/Ashish-Jadhav-09">
           <img
-            style={github}
+            style={{
+              height: "3rem",
+              width: "3rem",
+              margin: "0px 0px 0px 10px",
+              borderRadius: "1rem",
+              borderStyle: "hidden",
+            }}
             alt={require("../../assets/git.png")}
             src={require("../../assets/git.png")}
           />
