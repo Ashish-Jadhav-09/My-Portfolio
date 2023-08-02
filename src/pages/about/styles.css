@@ -1,12 +1,3 @@
-.mainContainter {
-  color: 'white';
-  margin-top: 120px;
-  place-items: right;
-  align-content: right;
-  justify-content: right;
-  overflow: hidden;
-}
-
 .aboutContent {
   position: relative;
   color: #eb523d;
@@ -31,14 +22,167 @@
 }
 
 .image-div {
-  width: 50%;
-  height: 550px;
-  margin-top: 50px;
-  background-image: url('../../assets/about.png');
+  max-width: 900px;
+  width: 100rem;
+  height: 35rem;
+  margin-top: 0px;
+  background-image: url("../../assets/about.png");
+  background-size: cover;
   border: 15px;
 }
 
 .content-overlap {
   position: absolute;
   margin-top: 100px;
+}
+
+.aboutDiv {
+  max-width: 400px;
+  margin: 0 auto;
+  color: "white";
+  margin-top: 40px;
+  place-items: right;
+  align-content: right;
+  justify-content: right;
+  margin-left: 50px;
+  overflow: hidden;
+
+  .aboutMainContent {
+    margin-bottom: 50px;
+  }
+}
+
+.detail-Div {
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "right";
+  align-content: right;
+}
+
+.content {
+  margin-right: "50px";
+}
+
+@media (min-width: 100px) and (max-width: 300px) {
+  .aboutDiv {
+    max-width: 100px;
+    margin-top: 0px;
+    place-items: left;
+    align-content: left;
+    justify-content: left;
+    margin-left: 0px;
+    overflow: hidden;
+    margin-bottom: 100px;
+
+    .image-div {
+      background-image: none;
+    }
+
+    .aboutContent {
+      position: relative;
+      color: #eb523d;
+      text-align: left;
+      margin-top: 0%;
+    }
+
+    .aboutMainContent {
+      margin-left: 0px;
+    }
+
+    .detail-Div {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .aboutDiv {
+    max-width: 180px;
+    margin-top: 40px;
+    place-items: left;
+    align-content: left;
+    justify-content: left;
+    margin-left: 0px;
+    overflow: hidden;
+    margin-bottom: 100px;
+
+    .image-div {
+      background-image: none;
+    }
+
+    .aboutContent {
+      position: relative;
+      color: #eb523d;
+      text-align: left;
+      margin-top: -20%;
+    }
+
+    .aboutMainContent {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .aboutDiv {
+    max-width: 320px;
+    margin-top: 40px;
+    place-items: left;
+    align-content: left;
+    justify-content: left;
+    margin-left: 50px;
+    overflow: hidden;
+
+    .aboutMainContent {
+      margin-left: 100px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .aboutDiv {
+    max-width: 480px;
+    margin-top: 40px;
+    place-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 50px;
+    overflow: hidden;
+
+    .aboutMainContent {
+      margin-left: 200px;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .aboutDiv {
+    max-width: 600px;
+    margin-top: 40px;
+    place-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 50px;
+    overflow: hidden;
+
+    .aboutMainContent {
+      margin-left: 200px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .aboutDiv {
+    max-width: 800px;
+    margin-top: 40px;
+    place-items: right;
+    align-content: right;
+    justify-content: right;
+    margin-left: 50px;
+    overflow: hidden;
+
+    .aboutMainContent {
+      margin-left: 300px;
+    }
+  }
 }

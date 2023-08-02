@@ -1,30 +1,376 @@
-.homeDiv {
-  display: "flex";
-  flex-direction: "column";
-  flex-grow: 1;
-  /* position: "fixed"; */
+.name-div {
+  display: flex;
+  flex-direction: row;
+  color: white;
 }
 
-.contentDiv {
-  margin: "10rem 10rem";
-  display: "flex";
-  flex-direction: "column";
-  flex-grow: 1;
-  color: "whitesmoke";
+.name-div-text {
+  font-size: 40px;
+  font-family: initial;
+  color: white;
+  font-weight: bold;
 }
 
-.avtarDiv {
-  margin: "4rem 70rem";
-  height: "100%";
-  width: "100%";
-  position: "fixed";
-  top: "0";
-  background-color: "white";
+.iam-div-text {
+  font-size: 40px;
+  font-family: initial;
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.name-text {
+  font-size: 40px;
+  font-family: initial;
+  color: #eb523d;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.bio-div {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.bio-div-initial-text {
+  font-size: 20px;
+  font-family: initial;
+  font-weight: bold;
+}
+
+.bio-div-type-writer {
+  font-size: 20px;
+  font-family: initial;
+  color: #eb523d;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.bio-div-text {
+  font-size: 17px;
+  font-family: monospace;
+  color: white;
+  margin-bottom: 30px;
 }
 
 .avtar {
-  margin: "6rem -13.5rem";
-  height: "62%";
-  width: "30%";
-  border: "hidden";
+  margin: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 340px;
+  width: 340px;
+}
+
+.linkedin {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 0px 0px 0px;
+  border-radius: 3rem;
+  border-style: hidden;
+}
+
+.instagram {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 0px 0px 10px;
+  border-radius: 1rem;
+  border-style: hidden;
+}
+
+.github {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 0px 0px 10px;
+  border-radius: 1rem;
+  border-style: hidden;
+}
+
+.css-19kzrtu {
+  padding: 0px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  padding: 0%;
+}
+
+.responsiveDiv1,
+.responsiveDiv2 {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+@media (min-width: 100px) and (max-width: 299px) {
+  .responsiveDiv1 {
+    width: 100%;
+    .name-div {
+      margin-top: 20px;
+      margin-left: 30px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .iam-div-text {
+        font-size: 25px;
+        margin-left: 1px;
+      }
+      .name-text {
+        font-size: 25px;
+      }
+    }
+
+    .bio-div {
+      margin-left: 30px;
+    }
+
+    .bio-div-text {
+      margin-left: 30px;
+    }
+
+    .contact-image-div {
+      margin-left: 30px;
+    }
+  }
+  .responsiveDiv2 {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      black 50%,
+      black 50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avtar {
+      height: 250px;
+      width: 250px;
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .responsiveDiv1 {
+    width: 100%;
+    .name-div {
+      margin-top: 20px;
+      margin-left: 30px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .iam-div-text {
+        font-size: 25px;
+        margin-left: 1px;
+      }
+      .name-text {
+        font-size: 25px;
+      }
+    }
+
+    .bio-div {
+      margin-left: 30px;
+    }
+
+    .bio-div-text {
+      margin-left: 30px;
+    }
+
+    .contact-image-div {
+      margin-left: 30px;
+    }
+  }
+  .responsiveDiv2 {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      black 50%,
+      black 50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avtar {
+      height: 280px;
+      width: 280px;
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .responsiveDiv1 {
+    width: 100%;
+    .name-div {
+      margin-top: 20px;
+      margin-left: 50px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .iam-div-text {
+        margin-left: 1px;
+      }
+    }
+
+    .bio-div {
+      margin-left: 50px;
+    }
+
+    .bio-div-text {
+      margin-left: 50px;
+    }
+
+    .contact-image-div {
+      margin-left: 50px;
+    }
+  }
+  .responsiveDiv2 {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      black 50%,
+      black 50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .responsiveDiv1 {
+    .name-div {
+      margin-top: 40px;
+      margin-left: 70px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .iam-div-text {
+        margin-left: 1px;
+      }
+    }
+
+    .bio-div {
+      margin-left: 70px;
+    }
+
+    .bio-div-text {
+      margin-left: 70px;
+    }
+
+    .contact-image-div {
+      margin-left: 70px;
+    }
+  }
+  .responsiveDiv2 {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(
+      to right,
+      black 50%,
+      white 50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avtar {
+      height: 300px;
+      width: 300px;
+      margin: 11.3rem;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .responsiveDiv1 {
+    .name-div {
+      margin-top: 70px;
+      margin-left: 100px;
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .iam-div-text {
+        margin-left: 1px;
+      }
+    }
+
+    .bio-div {
+      margin-left: 100px;
+    }
+
+    .bio-div-text {
+      margin-left: 100px;
+    }
+
+    .contact-image-div {
+      margin-left: 100px;
+    }
+  }
+  .responsiveDiv2 {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(
+      to right,
+      black 50%,
+      white 50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .responsiveDiv1 {
+    .name-div {
+      margin-top: 90px;
+      margin-left: 130px;
+      margin-bottom: 20px;
+    }
+
+    .bio-div {
+      margin-left: 130px;
+    }
+
+    .bio-div-text {
+      margin-left: 130px;
+    }
+
+    .contact-image-div {
+      margin-left: 130px;
+    }
+  }
+  .responsiveDiv2 {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(
+      to right,
+      black 50%,
+      white 50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avtar {
+      height: 400px;
+      width: 400px;
+      margin: 6.3rem;
+    }
+  }
+}
+
+.responsiveDiv2 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,11 +1,10 @@
-
 .button {
   position: relative;
   overflow: hidden;
 }
 
 .button::after {
-  content: '';
+  content: "";
   display: block;
   height: 4px;
   width: 100%;

@@ -54,7 +54,7 @@ const Contact = ({ setValue }) => {
   ];
 
   return (
-    <div sx={{ py: 6 }} maxWidth="md">
+    <div>
       <Typography
         sx={{ pb: 0, pt: 6 }}
         className="mySkills"
@@ -173,42 +173,24 @@ const Contact = ({ setValue }) => {
           ))}
         </Grid>
       </Container>
-      <div style={{ marginLeft: "110px" }}>
+      <div className="footerImg">
         <a href="https://www.linkedin.com/in/ashish-jadhav-a3550419a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjYu7abEkQeW%2BCM5GVzvoBw%3D%3D">
           <img
-            style={{
-              height: "3rem",
-              width: "3rem",
-              margin: "0px 0px 0px 0px",
-              borderRadius: "3rem",
-              borderStyle: "hidden",
-            }}
+            className="linkedin"
             alt={require("../../assets/LinkedIn_icon_circle.png")}
             src={require("../../assets/LinkedIn_icon_circle.png")}
           />
         </a>
         <a href="https://www.instagram.com/the_mr.aj/">
           <img
-            style={{
-              height: "3rem",
-              width: "3rem",
-              margin: "0px 0px 0px 10px",
-              borderRadius: "1rem",
-              borderStyle: "hidden",
-            }}
+            className="instagram"
             alt={require("../../assets/insta.png")}
             src={require("../../assets/insta.png")}
           />
         </a>
         <a href="https://github.com/Ashish-Jadhav-09">
           <img
-            style={{
-              height: "3rem",
-              width: "3rem",
-              margin: "0px 0px 0px 10px",
-              borderRadius: "1rem",
-              borderStyle: "hidden",
-            }}
+            className="github"
             alt={require("../../assets/git.png")}
             src={require("../../assets/git.png")}
           />
