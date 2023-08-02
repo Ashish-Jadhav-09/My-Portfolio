@@ -9,6 +9,7 @@
 .card:hover {
   color: #0d0c0d;
   background-color: #eb523d;
+  transform: scale(1.2);
 }
 
 a {
@@ -22,4 +23,64 @@ a::after {
 
 .footerText {
   cursor: pointer;
+}
+
+.footerImg {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.linkedin {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 0px 0px 0px;
+  border-radius: 3rem;
+  border-style: "hidden";
+}
+
+.instagram {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 0px 0px 10px;
+  border-radius: 1rem;
+  border-style: "hidden";
+}
+
+.github {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 0px 0px 10px;
+  border-radius: 1rem;
+  border-style: "hidden";
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+  .footerImg {
+    max-width: 180px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .footerImg {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footerImg {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footerImg {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footerImg {
+    max-width: 800px;
+  }
 }

@@ -96,10 +96,10 @@ const Skills = () => {
         My Skills
       </Typography>
       <Grid container spacing={5}>
-        {skillsData.map((element) => (
+        {skillsData.map((element, index) => (
           <Grid
             item
-            key={element}
+            key={`skills${index+1}`}
             xs={12}
             sm={6}
             md={6}
