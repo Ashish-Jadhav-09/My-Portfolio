@@ -498,23 +498,23 @@
       color: white;
       font-size: 30px;
       margin-top: 90px;
-      margin-left: 110px;
+      margin-left: 100px;
       margin-bottom: 20px;
       .name-div-text {
-        font-size: 40px;
+        font-size: 37px;
         font-family: initial;
         color: white;
         font-weight: bold;
       }
       .iam-div-text {
-        font-size: 40px;
+        font-size: 37px;
         font-family: initial;
         color: white;
         font-weight: bold;
         margin-left: 10px;
       }
       .name-text {
-        font-size: 40px;
+        font-size: 37px;
         font-family: initial;
         color: #eb523d;
         margin-left: 10px;
@@ -525,7 +525,7 @@
       display: flex;
       flex-direction: row;
       color: white;
-      margin-left: 110px;
+      margin-left: 100px;
     }
 
     .bio-div-initial-text {
@@ -547,11 +547,11 @@
       font-family: monospace;
       color: white;
       margin-bottom: 30px;
-      margin-left: 110px;
+      margin-left: 100px;
     }
 
     .contact-image-div {
-      margin-left: 110px;
+      margin-left: 100px;
     }
   }
   .responsiveDiv2 {
