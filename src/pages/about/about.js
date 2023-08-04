@@ -17,13 +17,12 @@ const About = () => {
           </Typography>
           <Typography className="aboutMainContent" variant="h6" color="white">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hi, I'm
-            passionate Software Developer based in India. Welcome to my
-            portfolio! I am dedicated to continuous learning and constantly
-            strive to stay updated with the latest industry trends and
-            technologies. I am always open to exciting opportunities,
-            collaborations, and new projects. If you would like to get in touch,
-            feel free to contact. Thank you for visiting my portfolio, and I
-            look forward to connecting with you!
+            passionate Software Developer based in India. I am dedicated to
+            continuous learning and constantly strive to stay updated with the
+            latest industry trends and technologies. I am always open to
+            exciting opportunities, collaborations, and new projects. If you
+            would like to get in touch, feel free to contact. Thank you for
+            visiting my portfolio, and I look forward to connecting with you!
           </Typography>
           <div className="detail-div">
             <div

@@ -36,7 +36,7 @@ const Contact = ({ setValue }) => {
     {
       title: "About",
       description: [
-        "Hi, I am passionate Software Developer based in India. Welcome to my portfolio!. Thank you for visiting my portfolio, and I look forward to connecting with you!",
+        "As a Full Stack Developer, I'm passionate about crafting seamless user experiences and robust applications.",
       ],
     },
     {
