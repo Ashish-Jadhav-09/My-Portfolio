@@ -77,11 +77,12 @@ const Contact = ({ setValue }) => {
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {cards.map((card) => (
-            <Grid item key={card.title} xs={12} sm={6} md={4}>
+            <Grid item key={card.title} xs={9} sm={6} md={4} style={{ margin: 'auto auto' }}>
               <Card
                 sx={{
                   backgroundColor: "#0d0c0d",
                   color: "#eb523d",
+                  border: "1px solid #eb523d",
                 }}
                 className="card"
               >
