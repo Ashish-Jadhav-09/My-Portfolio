@@ -15,7 +15,7 @@ const MyTimeline = () => {
   return (
     <Container sx={{ py: 6 }} maxWidth="md">
       <Typography
-        sx={{ pb: 3 }}
+        sx={{ pb: 3, mt: 12 }}
         className="mySkills"
         fontSize={40}
         fontWeight={900}

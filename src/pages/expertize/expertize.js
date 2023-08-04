@@ -64,7 +64,7 @@ const Expertize = () => {
   return (
     <Container sx={{ py: 6 }} maxWidth="md">
       <Typography
-        sx={{ pb: 6 }}
+        sx={{ pb: 6, mt: 12 }}
         className="myExpertize"
         fontSize={40}
         fontWeight={900}

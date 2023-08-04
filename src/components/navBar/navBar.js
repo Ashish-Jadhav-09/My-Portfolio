@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   AppBar,
   Box,
@@ -15,7 +15,7 @@ import {
   Divider,
 } from "@mui/material";
 import { Home } from "../../pages";
-import { buttonStyle, design, TabPanel } from "./style";
+import { buttonStyle, design } from "./style";
 import { About } from "../../pages/about";
 import { Skills } from "../../pages/skills";
 import { Expertize } from "../../pages/expertize";
@@ -37,8 +37,6 @@ const NavBar = () => {
   const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const pages = ["HOME", "ABOUT", "TIMELINE", "EXPERTIZE", "SKILL", "CONTACT"];
-
   const handleOnChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -51,9 +49,47 @@ const NavBar = () => {
     setOpen(false);
   };
 
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const timelineRef = useRef(null);
+  const expertizeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const pages = [
+    {
+      page: "HOME",
+      ref: homeRef,
+    },
+    {
+      page: "ABOUT",
+      ref: aboutRef,
+    },
+    {
+      page: "TIMELINE",
+      ref: timelineRef,
+    },
+    {
+      page: "EXPERTIZE",
+      ref: expertizeRef,
+    },
+    {
+      page: "SKILLS",
+      ref: skillsRef,
+    },
+    {
+      page: "CONTACT",
+      ref: contactRef,
+    },
+  ];
+
+  const handleClick = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <AppBar position="static" style={{ backgroundColor: "black" }}>
+      <AppBar position="fixed" style={{ backgroundColor: "black" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -105,12 +141,12 @@ const NavBar = () => {
                   <Toolbar sx={{ fontSize: 20 }}>My Portfolio...</Toolbar>
                   <Divider />
                   <List>
-                    {pages.map((item, index) => (
-                      <ListItem key={item} disablePadding>
+                    {pages.map((element, index) => (
+                      <ListItem key={element.page} disablePadding>
                         <ListItemButton
                           onClick={() => {
+                            handleClick(element.ref);
                             handleOnChange("", index);
-                            handleDrawerClose();
                           }}
                           style={{
                             ...buttonStyle,
@@ -120,7 +156,7 @@ const NavBar = () => {
                           <ListItemText
                             className={value !== index ? "button" : ""}
                             style={{ justifyContent: "center" }}
-                            primary={item}
+                            primary={element.page}
                           />
                         </ListItemButton>
                       </ListItem>
@@ -158,41 +194,45 @@ const NavBar = () => {
                   className: classes.indicator,
                 }}
               >
-                {pages.map((page, index) => (
+                {pages.map((element, index) => (
                   <Tab
-                    key={page}
-                    label={page}
+                    key={element.page}
+                    label={element.page}
                     className={value !== index ? "button" : ""}
+                    onClick={() => handleClick(element.ref)}
                     style={{
                       ...buttonStyle,
                       color: value === index ? "#eb523d" : "white",
                     }}
                     {...design(index)}
-                  />
+                  ></Tab>
                 ))}
               </Tabs>
             </Box>
           </Toolbar>
         </Container>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      <div ref={homeRef}>
         <Home />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+      </div>
+      <div ref={aboutRef}>
         <About />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
+      </div>
+      <div ref={timelineRef}>
         <Timeline />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
+      </div>
+      <div ref={expertizeRef}>
         <Expertize />
-      </TabPanel>
-      <TabPanel value={value} index={4}>
+      </div>
+      <div ref={skillsRef}>
         <Skills />
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        <Contact setValue={setValue} />
-      </TabPanel>
+      </div>
+      <div ref={contactRef}>
+        <Contact
+          handleClick={handleClick}
+          {...{ homeRef, aboutRef, timelineRef, expertizeRef, skillsRef }}
+        />
+      </div>
     </>
   );
 };

@@ -11,7 +11,7 @@ import React from "react";
 import StarIcon from "@mui/icons-material/StarBorder";
 import "./style.css";
 
-const Contact = ({ setValue }) => {
+const Contact = ({ handleClick, homeRef, aboutRef, timelineRef, expertizeRef, skillsRef }) => {
   const cards = [
     {
       title: "Linkedin",
@@ -42,10 +42,12 @@ const Contact = ({ setValue }) => {
     {
       title: "Links",
       description: ["Home", "About", "Timeline", "Skills"],
+      refs: [homeRef, aboutRef, timelineRef, skillsRef]
     },
     {
       title: "Expertize",
       description: ["Check Expertize"],
+      refs: [expertizeRef]
     },
     {
       title: "Any Questions?",
@@ -56,7 +58,7 @@ const Contact = ({ setValue }) => {
   return (
     <div>
       <Typography
-        sx={{ pb: 0, pt: 6 }}
+        sx={{ pb: 0, pt: 16 }}
         className="mySkills"
         fontSize={40}
         fontWeight={900}
@@ -160,10 +162,10 @@ const Contact = ({ setValue }) => {
                   className="footerText"
                   onClick={() => {
                     if (footer.title === "Links") {
-                      setValue(index === 3 ? 4 : index);
+                      handleClick(footer.refs[index]);
                     }
                     if (footer.title === "Expertize") {
-                      setValue(3);
+                      handleClick(footer.refs[index]);
                     }
                   }}
                 >

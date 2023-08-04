@@ -57,6 +57,7 @@
   flex-direction: "row";
   justify-content: "right";
   align-content: right;
+  margin-bottom: 200px;
 }
 
 .content {
