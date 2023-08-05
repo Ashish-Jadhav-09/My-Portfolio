@@ -1,11 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   AppBar,
   Box,
   Toolbar,
   Typography,
-  Tab,
-  Tabs,
   IconButton,
   List,
   ListItem,
@@ -13,33 +11,22 @@ import {
   ListItemText,
   Container,
   Divider,
+  Button,
 } from "@mui/material";
 import { Home } from "../../pages";
-import { buttonStyle, design } from "./style";
+import { buttonStyle } from "./style";
 import { About } from "../../pages/about";
 import { Skills } from "../../pages/skills";
 import { Expertize } from "../../pages/expertize";
 import { Timeline } from "../../pages/timeline";
 import { Contact } from "../../pages/contact";
-import { makeStyles } from "@material-ui/core";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import "./style.css";
 
-const useStyles = makeStyles((theme) => ({
-  indicator: {
-    backgroundColor: "#eb523d !important",
-  },
-}));
-
 const NavBar = () => {
-  const classes = useStyles();
-  const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
-
-  const handleOnChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const [activeSection, setActiveSection] = useState(0);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -85,6 +72,49 @@ const NavBar = () => {
 
   const handleClick = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const sectionRefs = pages.map(({ ref }) => ref);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = sectionRefs.findIndex(
+            (ref) => ref.current === entry.target
+          );
+          if (index !== -1) {
+            setActiveSection(index);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+
+    sectionRefs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [sectionRefs]);
+
+  const handleButtonClick = (index) => {
+    setActiveSection(index);
+    sectionRefs[index].current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -145,16 +175,18 @@ const NavBar = () => {
                       <ListItem key={element.page} disablePadding>
                         <ListItemButton
                           onClick={() => {
-                            handleClick(element.ref);
-                            handleOnChange("", index);
+                            handleButtonClick(index);
                           }}
                           style={{
                             ...buttonStyle,
-                            color: value === index ? "#eb523d" : "white",
+                            color:
+                              index === activeSection ? "#eb523d" : "white",
                           }}
                         >
                           <ListItemText
-                            className={value !== index ? "button" : ""}
+                            key={element.page}
+                            onClick={() => handleButtonClick(index)}
+                            className={index !== activeSection ? "button" : ""}
                             style={{ justifyContent: "center" }}
                             primary={element.page}
                           />
@@ -185,29 +217,23 @@ const NavBar = () => {
               Welcome
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Tabs
-                value={value}
-                onChange={handleOnChange}
-                sx={{ color: "white" }}
-                TabIndicatorProps={{
-                  color: "black",
-                  className: classes.indicator,
-                }}
-              >
-                {pages.map((element, index) => (
-                  <Tab
-                    key={element.page}
-                    label={element.page}
-                    className={value !== index ? "button" : ""}
-                    onClick={() => handleClick(element.ref)}
+              {pages.map((element, index) => (
+                <Button
+                  key={element.page}
+                  onClick={() => handleButtonClick(index)}
+                  disableRipple
+                >
+                  <Typography
+                    className="button"
                     style={{
                       ...buttonStyle,
-                      color: value === index ? "#eb523d" : "white",
+                      color: index === activeSection ? "#eb523d" : "white",
                     }}
-                    {...design(index)}
-                  ></Tab>
-                ))}
-              </Tabs>
+                  >
+                    {element.page}
+                  </Typography>
+                </Button>
+              ))}
             </Box>
           </Toolbar>
         </Container>
