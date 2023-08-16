@@ -11,7 +11,7 @@ I'm Ashish Jadhav, a passionate and creative web developer. My aim is to craft d
 ### Project: Portfolio Website
 
 - **Description:** My personal portfolio website, showcasing my projects and skills.
-- **Technologies:** HTML, CSS, JavaScript
+- **Technologies:** HTML, CSS, JavaScript, ReactJS, Material UI
 - **Link:** [View Project](https://ashishjadhav.netlify.app/)
 
 ## 🌟 Skills
